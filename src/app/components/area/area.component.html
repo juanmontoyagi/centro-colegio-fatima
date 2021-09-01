@@ -1,0 +1,30 @@
+<br>
+<h1 style="text-align: center;">REGISTRO DE GRUPOS</h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/areas"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+
+<div class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="area.idArea" name="id" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>DESCRIPCION</label>
+                <input type="text" name="" class="form-control" placeholder="NOMBRE AREA" [(ngModel)]="area.descripcion" name="nombre" required>
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25"><i class="fa fa-save"></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

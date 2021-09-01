@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="../../../assets/images/logoFatima.png" alt="" style="height: 80px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/home']">INICIO <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='DOCENTE' && usuarios.loggedIn || usuarios.tipoUsuario=='ADMINISTRADOR'">
+          <a class="nav-link" [routerLink]="['/tarea']">TAREAS</a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='DOCENTE' && usuarios.loggedIn || usuarios.tipoUsuario == 'ESTUDIANTE' || usuarios.tipoUsuario == 'PADRE' || usuarios.tipoUsuario == 'ADMINISTRADOR'">
+            <a class="nav-link" [routerLink]="['/circular']">CIRCULAR</a>
+          </li>
+
+          <!--<li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='DOCENTE' && usuarios.loggedIn || usuarios.tipoUsuario == 'ESTUDIANTE' || usuarios.tipoUsuario=='ADMINISTRADOR' || usuarios.tipoUsuario == 'PADRE'">
+            <a class="nav-link" [routerLink]="['/aviso']">AVISO</a>
+          </li>-->
+
+          <!--<li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='DOCENTE' && usuarios.loggedIn || usuarios.tipoUsuario == 'ESTUDIANTE' || usuarios.tipoUsuario=='ADMINISTRADOR'">
+            <a class="nav-link" [routerLink]="['/entrevista']">ENTREVISTA</a>
+          </li>-->
+
+       <!--<li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='DOCENTE' && usuarios.loggedIn || usuarios.tipoUsuario == 'ESTUDIANTE' || usuarios.tipoUsuario == 'PADRE' || usuarios.tipoUsuario=='ADMINISTRADOR'">
+            <a class="nav-link" [routerLink]="['/autorizacion']">AUTORIZACION</a>
+          </li>-->
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn || usuarios.tipoUsuario=='DOCENTE' || usuarios.tipoUsuario == 'ESTUDIANTE'">
+            <a class="nav-link" [routerLink]="['/nota']">NOTAS</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/registrar']">REGISTRAR</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/grupos']">GRUPOS</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/horario']">HORARIO</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/salones']">SALON</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/horarios']">HORARIOS</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/areas']">AREAS</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/asignatura']">ASIGNATURA</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active" *ngIf="usuarios.tipoUsuario=='ADMINISTRADOR' && usuarios.loggedIn ">
+            <a class="nav-link" [routerLink]="['/calificar']">CALIFICAR</a>
+          </li>
+      </ul>
+      <span class="badge badge-light" style="text-align: left;" *ngIf="usuarios.loggedIn">{{usuarios.tipoUsuario}}</span>
+      &nbsp;
+      &nbsp;
+      <span class="navbar-text"> 
+        <button class="btn btn-outline-light" [routerLink]="['/login']" *ngIf="!usuarios.loggedIn">
+          INGRESAR
+      </button>
+      <button class="btn btn-outline-danger" (click)="salir()" *ngIf="usuarios.loggedIn">
+        SALIR
+      </button>
+    </span>
+    </div>
+  </nav>

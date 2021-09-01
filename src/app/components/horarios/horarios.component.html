@@ -1,0 +1,27 @@
+<br>
+<h1 style="text-align: center;">ARTÍCULOS DE LA TIENDA</h1>
+<div class="row">
+    
+</div>
+
+<table class="table mt-3 animated fadeIn faster">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">HORA</th>
+            <th scope="col">DÍA</th>
+            <th scope="col">DOCENTE</th>
+            <th scope="col">GRUPO</th>
+            <th scope="col">SALÓN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let horario of horarios; let i = index">
+            <th scope="row">{{ i +1 }}</th>
+            <td>{{horario.hora}}</td>
+            <td>{{horario.dia}}</td>
+            <td>{{horario.grupo}}</td>
+            <td>{{horario.docente}}</td>
+            <td>{{horario.salon}}</td>
+        </tr>
+    </tbody>
+</table>

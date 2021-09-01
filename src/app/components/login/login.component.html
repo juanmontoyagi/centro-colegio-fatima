@@ -1,0 +1,38 @@
+<!--<div class="card text-center">
+    <div class="card-header">
+      <h2 style="text-align: center;">INICIO DE SESIÓN</h2>
+    </div>
+    <div class="card-body">
+        
+        <form (ngSubmit)="login(f)" #f="ngForm">
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electronico" [(ngModel)]="usuario.email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" [(ngModel)]="usuario.contrasena" name="contrasena" required>
+            </div>
+            <button type="submit" class="btn btn-dark">INICIAR SESIÓN</button>
+        </form>
+
+    </div>
+  </div> -->
+
+  
+<div class="card text-center">
+    <div class="card-header">
+      <h2 style="text-align: center;">INICIO DE SESIÓN</h2>
+    </div>
+    <div class="card-body">
+        
+        <form (ngSubmit)="iniciar(f)" #f="ngForm">
+            <div class="form-group">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo electronico" [(ngModel)]="usuario.email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" [(ngModel)]="usuario.contrasena" name="contrasena" required>
+            </div>
+            <button type="submit" class="btn btn-dark">INICIAR SESIÓN</button>
+        </form>
+
+    </div>
+  </div>

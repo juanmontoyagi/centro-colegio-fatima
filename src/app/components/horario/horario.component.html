@@ -1,0 +1,65 @@
+<h1>Crear Horario</h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/horarios"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+<div id="fm" class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="horarioObjeto.idHorario" name="id" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>DOCENTE</label>
+                <select class=" form-control " [(ngModel)]="horarioObjeto.docente" name="docente">
+                  <option *ngFor="let docente of docentes">{{docente.nombreUsuario}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>GRUPO</label>
+                <select class=" form-control " [(ngModel)]="horarioObjeto.grupo" name="grupo">
+                  <option *ngFor="let grupo of grupos">{{grupo.descripcion}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>SALON</label>
+                <select class=" form-control " [(ngModel)]="horarioObjeto.salon" name="salon">
+                  <option *ngFor="let salon of salones">{{salon.descripcionSalon}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>DIA</label>
+                <select class="form-control" [(ngModel)]="horarioObjeto.dia" name="dia">
+                  <option>LUNES</option>
+                  <option>MARTES</option>
+                  <option>MIERCOLES</option>
+                  <option>JUEVES</option>
+                  <option>VIERNES</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>HORA</label>
+                <select class="form-control" [(ngModel)]="horarioObjeto.hora" name="hora">
+                  <option>7:00 a 9:00</option>
+                  <option>10:00 a 12:00</option>
+                  <option>14:00 a 16:00</option>
+                  <option>16:00 a 18:00</option>
+                </select>
+            </div>
+
+            <hr>
+            <div class="form-group text-center ">
+                <button type="submit " class="btn btn-primary w-25 "><i class="fa fa-save "></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

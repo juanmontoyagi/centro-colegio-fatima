@@ -1,0 +1,42 @@
+<h1>INCIDENCIAS   <small>REGISTRO DE INCIDENCIAS</small></h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/personas"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+
+<div class="row animated fadeIn fasted">
+    <div class="col">
+        <form>
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID">
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>INCIDENCIA</label>
+                <input type="text" name="" class="form-control" placeholder="INCIDENCIA">
+            </div>
+
+            <div class="form-group">
+                <label>COMENTARIOS DE LA INCIDENCIA</label>
+                <input type="text" name="" class="form-control" placeholder="DESCRIPCION">
+            </div>
+
+            <div class="form-group">
+                <label>ESTUDIANTE</label>
+             <!--   <select *ngFor="let estudiante of estudiantes" class="form-control" [(ngModel)]="estudiantes.acudiente" name="acudiente">
+                  <option>{{estudiante.nombreUsuario}}</option>
+                </select>-->
+                <input type="text" name="" class="form-control" placeholder="ESTUDIANTE">
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25"><i class="fa fa-save"></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

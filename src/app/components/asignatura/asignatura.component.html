@@ -1,0 +1,38 @@
+<hr>
+<div class="page-header text-center">       
+    <h1>ASIGNATURAS</h1>        
+  </div>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/horarios"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+<div id="fm" class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="asignatura.idAsignatura" name="id" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>AREA</label>
+                <select class=" form-control " [(ngModel)]="asignatura.idArea" name="descripcion">
+                  <option *ngFor="let area of areas">{{area.descripcion}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>DESCRIPCION</label>
+                <input type="text" name="" class="form-control" placeholder="NOMBRE GRUPO" [(ngModel)]="asignatura.descripcion" name="nombre" required>
+            </div>
+
+            <hr>
+            <div class="form-group text-center ">
+                <button type="submit " class="btn btn-primary w-25 "><i class="fa fa-save "></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

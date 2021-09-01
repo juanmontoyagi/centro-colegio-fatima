@@ -1,0 +1,45 @@
+<hr>
+<div class="page-header text-center">       
+    <h1>CALIFICAR</h1>        
+  </div>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/notas"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+<div id="fm" class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="nota.idNota" name="id" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>TAREA</label>
+                <select class=" form-control " [(ngModel)]="nota.tarea" name="tarea" (change)="capturarTarea()">
+                  <option *ngFor="let tarea of tareas">{{tarea.descripcionTarea}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>ESTUDIANTE</label>
+                <select class=" form-control " [(ngModel)]="nota.estudiantes" name="estudiantes">
+                  <option *ngFor="let estudiante of estudiantes">{{estudiante.estudiante}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>NOTA</label>
+                <input type="text" name="" class="form-control" placeholder="NOTA" [(ngModel)]="nota.notaDescripcion" name="notaDescripcion" required>
+            </div>
+
+            <hr>
+            <div class="form-group text-center ">
+                <button type="submit " class="btn btn-primary w-25 "><i class="fa fa-save "></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

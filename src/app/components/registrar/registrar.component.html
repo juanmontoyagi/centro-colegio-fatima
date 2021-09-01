@@ -1,0 +1,65 @@
+<br>
+<h1 style="text-align: center;">REGISTRO DE USUARIOS</h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/personas"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+
+<div class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="usuario.idUsuario" name="id" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>NOMBRE</label>
+                <input type="text" name="" class="form-control" placeholder="NOMBRE" [(ngModel)]="usuario.nombreUsuario" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label>APELLIDO</label>
+                <input type="text" name="" class="form-control" placeholder="APELLIDO" [(ngModel)]="usuario.apellidoUsuario" name="apellido" required>
+            </div>
+
+            <div class="form-group">
+                <label>EMAIL</label>
+                <input type="text" name="" class="form-control" placeholder="EMAIL" [(ngModel)]="usuario.email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>CONTRASEÑA</label>
+                <input type="text" name="" class="form-control" placeholder="CONTRASEÑA" [(ngModel)]="usuario.contrasena" name="contrasena" required>
+            </div>
+
+            <div class="form-group">
+                <label>TIPO USUARIO</label>
+                <select class="form-control" [(ngModel)]="usuario.tipoUsuario" name="tipoUsuario">
+                  <option>DOCENTE</option>
+                  <option>ESTUDIANTE</option>
+                  <option>PADRE</option>
+                </select>
+            </div>
+
+            <div class="form-group" *ngIf="usuario.tipoUsuario == 'ESTUDIANTE'">
+                <label>ACUDIENTE</label>
+                <select *ngFor="let padre of padres" class="form-control" [(ngModel)]="usuario.acudiente" name="acudiente">
+                  <option>{{padre.nombreUsuario}}</option>
+                </select>
+            </div>
+            
+            <div class="form-group" *ngIf="usuario.tipoUsuario == 'ESTUDIANTE'">
+                <label>GRUPO</label>
+                <input type="text" name="" class="form-control" placeholder="GRUPO" [(ngModel)]="usuario.grupo" name="grupo" required>
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25"><i class="fa fa-save"></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

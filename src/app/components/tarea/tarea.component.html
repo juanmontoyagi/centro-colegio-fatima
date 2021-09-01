@@ -1,0 +1,41 @@
+<h1>TAREAS   <small>REGISTRO DE TAREAS</small></h1>
+<hr>
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/personas"><i class="fa fa-arrow-left"> REGRESAR</i></button>
+    </div>
+</div>
+
+<div class="row animated fadeIn fasted">
+    <div class="col">
+        <form (ngSubmit)="guardar(f)" #f="ngForm">
+            <div class="form-group">
+                <label>FIREBASE ID</label>
+                <input type="text" name="" class="form-control" disabled="disabled" placeholder="FIREBASE ID" [(ngModel)]="tarea.idTarea" name="idTarea" required>
+                <small class="form-text text-mutted">ESTE CAMPO ES AUTOGENERADO</small>
+            </div>
+
+            <div class="form-group">
+                <label>NOMBRE DE LA TAREA</label>
+                <input type="text" name="" class="form-control" placeholder="NOMBRE" [(ngModel)]="tarea.nombreTarea" name="nombreTarea" required>
+            </div>
+
+            <div class="form-group">
+                <label>DESCRIPCIÓN</label>
+                <input type="text" name="" class="form-control" placeholder="DESCRIPCION" [(ngModel)]="tarea.descripcionTarea" name="descripcionTarea" required>
+            </div>
+
+            <div class="form-group">
+                <label>ESTUDIANTES</label>
+                <select class="form-control" [(ngModel)]="tarea.estudiante" name="nombreUsuario">
+                  <option *ngFor="let estudiante of estudiantes">{{estudiante.nombreUsuario}}</option>
+                </select>
+            </div>
+
+            <hr>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary w-25"><i class="fa fa-save"></i> GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>
